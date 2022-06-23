@@ -38,3 +38,28 @@ body {
 .high-score-btn:hover {
     background-color: lightblue;
 }
+nav {
+    display: flex;
+}
+nav div {
+    background-color: rgb(20, 129, 255);
+    color:white;
+    display:flex;
+    justify-content:right;
+}
+.time-text {
+    display:flex;
+    margin-left:90%;
+    border-top: solid;
+    border-left: solid;
+    border-bottom: solid;
+    border-color: black;
+}
+.timer {
+    display:flex;
+    padding-top:10px;
+    border-top: solid;
+    border-right: solid;
+    border-bottom: solid;
+    border-color: black;
+}
