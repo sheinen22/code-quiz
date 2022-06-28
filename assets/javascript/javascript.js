@@ -1,4 +1,3 @@
-
 var qAndAs = [
     {
         question: "What does HTML stand for?",
@@ -37,9 +36,12 @@ var qAndAs = [
         correct: "*"
     }
 ];
-
-start-btn.addEventListener("click", startQuiz);
+var startBtn = document.querySelector(".start-btn")
+startBtn.addEventListener("click", startQuiz);
 
 function startQuiz () {
-    
+    var rules = document.querySelector(".rules");
+    var quizBox = document.querySelector(".quiz-box");
+    rules.style.display = "none"
+    quizBox.style.display = "block";
 }
