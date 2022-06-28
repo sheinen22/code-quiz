@@ -1,39 +1,39 @@
 var qAndAs = [
     {
         question: "What does HTML stand for?",
-        optionA: "Hyper Text Markup Language",
-        optionB: "Hyper Text Multiple Language",
-        optionC: "Hyper Tools Multi Language",
-        optionD: "Hyper Trigger Mini Language",
-        Correct: "What does HTML stand for?"
+        optionA: "A: Hyper Text Markup Language",
+        optionB: "B: Hyper Text Multiple Language",
+        optionC: "C: Hyper Tools Multi Language",
+        optionD: "D: Hyper Trigger Mini Language",
+        Correct: "A: Hyper Text Markup Language"
     }, {
         question: "What does CSS stand for?",
-        optionA: "Colorful Style Sheet",
-        optionB: "Centralized Style Sheet",
-        optionC: "Coordinated Style Sheet",
-        optionD: "Cascading Style Sheet",
-        Correct: "Cascading Style Sheet"
+        optionA: "A: Colorful Style Sheet",
+        optionB: "B: Centralized Style Sheet",
+        optionC: "C: Coordinated Style Sheet",
+        optionD: "D: Cascading Style Sheet",
+        Correct: "D: Cascading Style Sheet"
     }, {
         question: "What character represents 'class' in CSS?",
-        optionA: "#",
-        optionB: ":",
-        optionC: ".",
-        optionD: "-",
-        correct: "."
+        optionA: "A: #",
+        optionB: "B: :",
+        optionC: "C: .",
+        optionD: "D: -",
+        correct: "C: ."
     }, {
         question: "What flag adds a message in Git?",
-        optionA: "/m",
-        optionB: "[m",
-        optionC: "-m",
-        optionD: ".m",
-        correct: "-m"
+        optionA: "A: /m",
+        optionB: "B: [m",
+        optionC: "C: -m",
+        optionD: "D: .m",
+        correct: "C: -m"
     }, {
         question: "In CSS, what character allows you to influence all aspects?",
-        optionA: ".",
-        optionB: "*",
-        optionC: "#",
-        optionD: "@",
-        correct: "*"
+        optionA: "A: .",
+        optionB: "B: *",
+        optionC: "C: #",
+        optionD: "D: @",
+        correct: "B: *"
     }
 ];
 var startBtn = document.querySelector(".start-btn")
@@ -44,4 +44,19 @@ function startQuiz () {
     var quizBox = document.querySelector(".quiz-box");
     rules.style.display = "none"
     quizBox.style.display = "block";
+    firstQuestion ();
+}
+
+function firstQuestion () {
+    var blankSpace = qAndAs[0];
+    var question = document.querySelector(".question");
+    var A = document.querySelector(".A");
+    var B = document.querySelector(".B");
+    var C = document.querySelector(".C");
+    var D = document.querySelector(".D");
+    question.innerHTML = blankSpace.question;
+    A.innerHTML = blankSpace.optionA;
+    B.innerHTML = blankSpace.optionB;
+    C.innerHTML = blankSpace.optionC;
+    D.innerHTML = blankSpace.optionD;
 }

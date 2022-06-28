@@ -63,3 +63,35 @@ nav div {
     border-bottom: solid;
     border-color: black;
 }
+
+.A,
+.B,
+.C,
+.D {
+    text-align:left;
+    padding:7px;
+    margin:2px;
+}
+.question {
+    text-align:center;
+    color: white;
+    border: solid;
+    border-color: black;
+}
+.A:hover,
+.B:hover,
+.C:hover,
+.D:hover {
+    background-color: lightblue;
+}
+
+.quiz-box {
+    background-color: rgb(20, 129, 255);
+    margin-top: 17%;
+    margin-left:30%;
+    margin-right:30%;
+    list-style: inside;
+    border: solid;
+    border-color: black;
+    display: none;
+}
