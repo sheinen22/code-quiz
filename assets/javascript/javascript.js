@@ -36,6 +36,9 @@ var qAndAs = [
         correct: "B: *"
     }
 ];
+var timer = document.querySelector(".timer");
+var timeLeft = 99;
+
 var startBtn = document.querySelector(".start-btn")
 startBtn.addEventListener("click", startQuiz);
 
@@ -45,6 +48,14 @@ function startQuiz () {
     rules.style.display = "none"
     quizBox.style.display = "block";
     firstQuestion ();
+    startTime()
+}
+
+function startTime() {
+    setInterval(function() {
+        timeLeft--;
+        timer.textContent = timeLeft;
+    }, 1000);
 }
 
 function firstQuestion () {
