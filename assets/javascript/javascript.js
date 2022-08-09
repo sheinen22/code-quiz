@@ -71,3 +71,59 @@ function firstQuestion () {
     C.innerHTML = blankSpace.optionC;
     D.innerHTML = blankSpace.optionD;
 }
+
+function secondQuestion () {
+    var blankSpace = qAndAs[1];
+    var question = document.querySelector(".question");
+    var A = document.querySelector(".A");
+    var B = document.querySelector(".B");
+    var C = document.querySelector(".C");
+    var D = document.querySelector(".D");
+    question.innerHTML = blankSpace.question;
+    A.innerHTML = blankSpace.optionA;
+    B.innerHTML = blankSpace.optionB;
+    C.innerHTML = blankSpace.optionC;
+    D.innerHTML = blankSpace.optionD;
+}
+
+function thirdQuestion () {
+    var blankSpace = qAndAs[2];
+    var question = document.querySelector(".question");
+    var A = document.querySelector(".A");
+    var B = document.querySelector(".B");
+    var C = document.querySelector(".C");
+    var D = document.querySelector(".D");
+    question.innerHTML = blankSpace.question;
+    A.innerHTML = blankSpace.optionA;
+    B.innerHTML = blankSpace.optionB;
+    C.innerHTML = blankSpace.optionC;
+    D.innerHTML = blankSpace.optionD;
+}
+
+function fourthQuestion () {
+    var blankSpace = qAndAs[3];
+    var question = document.querySelector(".question");
+    var A = document.querySelector(".A");
+    var B = document.querySelector(".B");
+    var C = document.querySelector(".C");
+    var D = document.querySelector(".D");
+    question.innerHTML = blankSpace.question;
+    A.innerHTML = blankSpace.optionA;
+    B.innerHTML = blankSpace.optionB;
+    C.innerHTML = blankSpace.optionC;
+    D.innerHTML = blankSpace.optionD;
+}
+
+function fifthQuestion () {
+    var blankSpace = qAndAs[4];
+    var question = document.querySelector(".question");
+    var A = document.querySelector(".A");
+    var B = document.querySelector(".B");
+    var C = document.querySelector(".C");
+    var D = document.querySelector(".D");
+    question.innerHTML = blankSpace.question;
+    A.innerHTML = blankSpace.optionA;
+    B.innerHTML = blankSpace.optionB;
+    C.innerHTML = blankSpace.optionC;
+    D.innerHTML = blankSpace.optionD;
+}
