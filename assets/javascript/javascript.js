@@ -38,16 +38,18 @@ var qAndAs = [
 ];
 var timer = document.querySelector(".timer");
 var timeLeft = 99;
+var buttonHelp = document.querySelector("#button-help")
 
 var startBtn = document.querySelector(".start-btn")
 startBtn.addEventListener("click", startQuiz);
+
 
 function startQuiz () {
     var rules = document.querySelector(".rules");
     var quizBox = document.querySelector(".quiz-box");
     rules.style.display = "none"
     quizBox.style.display = "block";
-    firstQuestion ();
+    firstQuestion();
     startTime()
 }
 
@@ -72,18 +74,21 @@ function firstQuestion () {
     B.innerHTML = blankSpace.optionB;
     C.innerHTML = blankSpace.optionC;
     D.innerHTML = blankSpace.optionD;
+    buttonHelp.addEventListener("click", questionTwo)
 }
 
-document.addEventListener("click", function (event) {
+function questionTwo(event) {
         var target = event.target;
         if (target.matches("#answer")){
             if (qAndAs[0].correct === event.target.textContent) {
                 secondQuestion()
+                buttonHelp.removeEventListener("click", questionTwo)
             } else {
                 secondQuestion()
+                buttonHelp.removeEventListener("click", questionTwo)
                 //time decrease.
             }
-        }})
+        }}
 
 function secondQuestion () {
     var blankSpace = qAndAs[1];
@@ -97,18 +102,21 @@ function secondQuestion () {
     B.innerHTML = blankSpace.optionB;
     C.innerHTML = blankSpace.optionC;
     D.innerHTML = blankSpace.optionD;
+    buttonHelp.addEventListener("click", questionThree)
 }
 
-// document.addEventListener("click", function (event) {
-//     var target = event.target;
-//     if (target.matches("#answer")){
-//         if (qAndAs[1].correct === event.target.textContent) {
-//             thirdQuestion()
-//         } else {
-//             thirdQuestion()
-//             //time decrease.
-//         }
-//     }})
+function questionThree(event) {
+    var target = event.target;
+    if (target.matches("#answer")){
+        if (qAndAs[1].correct === event.target.textContent) {
+            thirdQuestion()
+            buttonHelp.removeEventListener("click", questionThree)
+        } else {
+            thirdQuestion()
+            buttonHelp.removeEventListener("click", questionThree)
+            //time decrease.
+        }
+    }}
 
 function thirdQuestion () {
     var blankSpace = qAndAs[2];
@@ -122,18 +130,21 @@ function thirdQuestion () {
     B.innerHTML = blankSpace.optionB;
     C.innerHTML = blankSpace.optionC;
     D.innerHTML = blankSpace.optionD;
+    buttonHelp.addEventListener("click", questionFour)
 }
 
-// document.addEventListener("click", function (event) {
-//     var target = event.target;
-//     if (target.matches(".A", ".B", ".C", ".D" )){
-//         if (qAndAs[2].correct === event.target.textContent) {
-//             fourthQuestion()
-//         } else {
-//             fourthQuestion()
-//             //time decrease.
-//         }
-//     }})
+function questionFour(event) {
+    var target = event.target;
+    if (target.matches("#answer")){
+        if (qAndAs[2].correct === event.target.textContent) {
+            fourthQuestion()
+            buttonHelp.removeEventListener("click", questionFour)
+        } else {
+            fourthQuestion()
+            buttonHelp.removeEventListener("click", questionFour)
+            //time decrease.
+        }
+    }}
 
 function fourthQuestion () {
     var blankSpace = qAndAs[3];
@@ -147,18 +158,21 @@ function fourthQuestion () {
     B.innerHTML = blankSpace.optionB;
     C.innerHTML = blankSpace.optionC;
     D.innerHTML = blankSpace.optionD;
+    buttonHelp.addEventListener("click", questionFive)
 }
 
-// document.addEventListener("click", function (event) {
-//     var target = event.target;
-//     if (target.matches(".A", ".B", ".C", ".D" )){
-//         if (qAndAs[3].correct === event.target.textContent) {
-//             fifthQuestion()
-//         } else {
-//             fifthQuestion()
-//             //time decrease.
-//         }
-//     }})
+function questionFive(event) {
+    var target = event.target;
+    if (target.matches("#answer")){
+        if (qAndAs[3].correct === event.target.textContent) {
+            fifthQuestion()
+            buttonHelp.removeEventListener("click", questionFive)
+        } else {
+            fifthQuestion()
+            buttonHelp.removeEventListener("click", questionFive)
+            //time decrease.
+        }
+    }}
 
 function fifthQuestion () {
     var blankSpace = qAndAs[4];
@@ -172,15 +186,22 @@ function fifthQuestion () {
     B.innerHTML = blankSpace.optionB;
     C.innerHTML = blankSpace.optionC;
     D.innerHTML = blankSpace.optionD;
+    buttonHelp.addEventListener("click", scorePage)
 }
 
-// document.addEventListener("click", function (event) {
-//     var target = event.target;
-//     if (target.matches(".A", ".B", ".C", ".D" )){
-//         if (qAndAs[4].correct === event.target.textContent) {
-//             //need a score screen
-//         } else {
-//             //need a score screen
-//             //time decrease
-//         }
-//     }})
+function scorePage(event) {
+    var target = event.target;
+    if (target.matches("#answer")){
+        if (qAndAs[4].correct === event.target.textContent) {
+            finalScore()
+            buttonHelp.removeEventListener("click", scorePage)
+        } else {
+            finalScore()
+            buttonHelp.removeEventListener("click", scorePage)
+            //time decrease.
+        }
+    }}
+
+function finalScore() {
+    
+}
