@@ -37,8 +37,9 @@ var qAndAs = [
     }
 ];
 var timer = document.querySelector(".timer");
-var timeLeft = 99;
+var time = 99;
 var buttonHelp = document.querySelector("#button-help")
+var buttonHelp2 = document.querySelector("#button-help2")
 
 var startBtn = document.querySelector(".start-btn")
 startBtn.addEventListener("click", startQuiz);
@@ -55,12 +56,15 @@ function startQuiz () {
 
 function startTime() {
     setInterval(function() {
-        timeLeft--;
-        timer.textContent = timeLeft;
+        time--;
+        timer.textContent = time;
     }, 1000);
 }
 
 //need a time decrease function for wrong answer
+function wrongAnswer() {
+    time = time - 10
+}
 
 function firstQuestion () {
     var blankSpace = qAndAs[0];
@@ -80,13 +84,13 @@ function firstQuestion () {
 function questionTwo(event) {
         var target = event.target;
         if (target.matches("#answer")){
-            if (qAndAs[0].correct === event.target.textContent) {
+            if (qAndAs[0].correct == event.target.textContent) {
                 secondQuestion()
                 buttonHelp.removeEventListener("click", questionTwo)
             } else {
                 secondQuestion()
                 buttonHelp.removeEventListener("click", questionTwo)
-                //time decrease.
+                wrongAnswer()
             }
         }}
 
@@ -108,13 +112,13 @@ function secondQuestion () {
 function questionThree(event) {
     var target = event.target;
     if (target.matches("#answer")){
-        if (qAndAs[1].correct === event.target.textContent) {
+        if (qAndAs[1].correct == event.target.textContent) {
             thirdQuestion()
             buttonHelp.removeEventListener("click", questionThree)
         } else {
             thirdQuestion()
             buttonHelp.removeEventListener("click", questionThree)
-            //time decrease.
+            wrongAnswer()
         }
     }}
 
@@ -142,7 +146,7 @@ function questionFour(event) {
         } else {
             fourthQuestion()
             buttonHelp.removeEventListener("click", questionFour)
-            //time decrease.
+            wrongAnswer()
         }
     }}
 
@@ -170,7 +174,7 @@ function questionFive(event) {
         } else {
             fifthQuestion()
             buttonHelp.removeEventListener("click", questionFive)
-            //time decrease.
+            wrongAnswer()
         }
     }}
 
@@ -198,10 +202,16 @@ function scorePage(event) {
         } else {
             finalScore()
             buttonHelp.removeEventListener("click", scorePage)
-            //time decrease.
+            wrongAnswer()
         }
     }}
 
 function finalScore() {
-    
+    var quizBox = document.querySelector(".quiz-box");
+    var scoreBox = document.querySelector(".final-score")
+    quizBox.style.display = "none";
+    scoreBox.style.display = "block";
+    timer.textContent = time;
+    scoreBox.textContent = ('Final Score:' + time)
+    buttonHelp2.addEventListener("click", startQuiz)
 }
