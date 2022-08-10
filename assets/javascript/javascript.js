@@ -39,7 +39,7 @@ var qAndAs = [
 var timer = document.querySelector(".timer");
 var time = 99;
 var buttonHelp = document.querySelector("#button-help")
-var buttonHelp2 = document.querySelector("#button-help2")
+var buttonHelp2 = document.querySelector(".start-over")
 
 var startBtn = document.querySelector(".start-btn")
 startBtn.addEventListener("click", startQuiz);
@@ -83,8 +83,7 @@ function firstQuestion () {
 
 function questionTwo(event) {
         var target = event.target;
-    
-            if (target = A) {
+            if (target == A) {
                 secondQuestion()
                 buttonHelp.removeEventListener("click", questionTwo)
             } else {
@@ -106,8 +105,7 @@ function secondQuestion () {
 
 function questionThree(event) {
     var target = event.target;
-    if (target.matches("#answer")){
-        if (qAndAs[1].correct == event.target.textContent) {
+        if (target == D) {
             thirdQuestion()
             buttonHelp.removeEventListener("click", questionThree)
         } else {
@@ -115,7 +113,7 @@ function questionThree(event) {
             buttonHelp.removeEventListener("click", questionThree)
             wrongAnswer()
         }
-    }}
+    }
 
 function thirdQuestion () {
     var blankSpace = qAndAs[2];
@@ -141,7 +139,6 @@ function questionFour(event) {
 
 function fourthQuestion () {
     var blankSpace = qAndAs[3];
-    var question = document.querySelector(".question");
     question.innerHTML = blankSpace.question;
     A.innerHTML = blankSpace.optionA;
     B.innerHTML = blankSpace.optionB;
@@ -152,8 +149,8 @@ function fourthQuestion () {
 
 function questionFive(event) {
     var target = event.target;
-    if (target.matches("#answer")){
-        if (qAndAs[3].correct === event.target.textContent) {
+
+        if (target == C) {
             fifthQuestion()
             buttonHelp.removeEventListener("click", questionFive)
         } else {
@@ -161,7 +158,7 @@ function questionFive(event) {
             buttonHelp.removeEventListener("click", questionFive)
             wrongAnswer()
         }
-    }}
+    }
 
 function fifthQuestion () {
     var blankSpace = qAndAs[4];
@@ -175,8 +172,7 @@ function fifthQuestion () {
 
 function scorePage(event) {
     var target = event.target;
-    if (target.matches("#answer")){
-        if (qAndAs[4].correct === event.target.textContent) {
+        if (target == B) {
             finalScore()
             buttonHelp.removeEventListener("click", scorePage)
         } else {
@@ -184,14 +180,15 @@ function scorePage(event) {
             buttonHelp.removeEventListener("click", scorePage)
             wrongAnswer()
         }
-    }}
+    }
 
 function finalScore() {
     var quizBox = document.querySelector(".quiz-box");
-    var scoreBox = document.querySelector(".final-score")
+    var scoreBox = document.querySelector(".final-score");
+    var score = document.querySelector(".score")
     quizBox.style.display = "none";
     scoreBox.style.display = "block";
     timer.textContent = time;
-    scoreBox.textContent = ('Final Score:' + time)
+    score.textContent = ('Final Score:' + time)
     buttonHelp2.addEventListener("click", startQuiz)
 }
