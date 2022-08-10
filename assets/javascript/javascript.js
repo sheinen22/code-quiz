@@ -65,14 +65,14 @@ function startTime() {
 function wrongAnswer() {
     time = time - 10
 }
+var question = document.querySelector(".question");
+var A = document.querySelector(".A");
+var B = document.querySelector(".B");
+var C = document.querySelector(".C");
+var D = document.querySelector(".D");
 
 function firstQuestion () {
     var blankSpace = qAndAs[0];
-    var question = document.querySelector(".question");
-    var A = document.querySelector(".A");
-    var B = document.querySelector(".B");
-    var C = document.querySelector(".C");
-    var D = document.querySelector(".D");
     question.innerHTML = blankSpace.question;
     A.innerHTML = blankSpace.optionA;
     B.innerHTML = blankSpace.optionB;
@@ -83,8 +83,8 @@ function firstQuestion () {
 
 function questionTwo(event) {
         var target = event.target;
-        if (target.matches("#answer")){
-            if (qAndAs[0].correct == event.target.textContent) {
+    
+            if (target = A) {
                 secondQuestion()
                 buttonHelp.removeEventListener("click", questionTwo)
             } else {
@@ -92,15 +92,10 @@ function questionTwo(event) {
                 buttonHelp.removeEventListener("click", questionTwo)
                 wrongAnswer()
             }
-        }}
+        }
 
 function secondQuestion () {
     var blankSpace = qAndAs[1];
-    var question = document.querySelector(".question");
-    var A = document.querySelector(".A");
-    var B = document.querySelector(".B");
-    var C = document.querySelector(".C");
-    var D = document.querySelector(".D");
     question.innerHTML = blankSpace.question;
     A.innerHTML = blankSpace.optionA;
     B.innerHTML = blankSpace.optionB;
@@ -124,11 +119,6 @@ function questionThree(event) {
 
 function thirdQuestion () {
     var blankSpace = qAndAs[2];
-    var question = document.querySelector(".question");
-    var A = document.querySelector(".A");
-    var B = document.querySelector(".B");
-    var C = document.querySelector(".C");
-    var D = document.querySelector(".D");
     question.innerHTML = blankSpace.question;
     A.innerHTML = blankSpace.optionA;
     B.innerHTML = blankSpace.optionB;
@@ -139,8 +129,7 @@ function thirdQuestion () {
 
 function questionFour(event) {
     var target = event.target;
-    if (target.matches("#answer")){
-        if (qAndAs[2].correct === event.target.textContent) {
+        if (target == C) {
             fourthQuestion()
             buttonHelp.removeEventListener("click", questionFour)
         } else {
@@ -148,15 +137,11 @@ function questionFour(event) {
             buttonHelp.removeEventListener("click", questionFour)
             wrongAnswer()
         }
-    }}
+    }
 
 function fourthQuestion () {
     var blankSpace = qAndAs[3];
     var question = document.querySelector(".question");
-    var A = document.querySelector(".A");
-    var B = document.querySelector(".B");
-    var C = document.querySelector(".C");
-    var D = document.querySelector(".D");
     question.innerHTML = blankSpace.question;
     A.innerHTML = blankSpace.optionA;
     B.innerHTML = blankSpace.optionB;
@@ -180,11 +165,6 @@ function questionFive(event) {
 
 function fifthQuestion () {
     var blankSpace = qAndAs[4];
-    var question = document.querySelector(".question");
-    var A = document.querySelector(".A");
-    var B = document.querySelector(".B");
-    var C = document.querySelector(".C");
-    var D = document.querySelector(".D");
     question.innerHTML = blankSpace.question;
     A.innerHTML = blankSpace.optionA;
     B.innerHTML = blankSpace.optionB;
